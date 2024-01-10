@@ -5,7 +5,6 @@ __pycache__/
 *.pyd
 
 # Temporary files
-config.json
 demo.py
 Dockerfile
 
