@@ -9,7 +9,6 @@ config.json
 demo.py
 
 # Docker
-Dockerfile
 .env
 
 # Virtual Environment
