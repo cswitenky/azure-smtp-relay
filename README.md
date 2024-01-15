@@ -14,7 +14,7 @@ Before using this SMTP relay server, you need to have an Azure Communication Ser
 
 ## Installation
 
-### Python
+### Python 3.8+
 
 First, add your connection string to `config.json`.
 
