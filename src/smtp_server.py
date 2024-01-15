@@ -1,10 +1,9 @@
 from aiosmtpd.handlers import Message
 from aiosmtpd.controller import Controller
-from email import message_from_bytes
 
 import azure_email
 
-class CustomHandler(Message):
+class AzureEmailHandler(Message):
     def handle_message(self, message):
         subject = message.get('subject')
         senderAddresses = message.get('from')
@@ -23,12 +22,18 @@ class CustomHandler(Message):
         return azure_email.send_email(senderAddresses, recipients, subject, body);
 
 def main():
-    handler = CustomHandler()
+    handler = AzureEmailHandler()
     server = Controller(handler, hostname='0.0.0.0', port=1025)
 
-    server.start()
-    input("SMTP Relay Server started on %s at port %s. Press Return to quit." % (server.hostname, server.port))
-    server.stop()
+    try:
+        server.start()
+        print("SMTP Relay Server started on %s at port %s. Press Ctrl+C to quit." % (server.hostname, server.port))
+        while True:
+            pass
+    except KeyboardInterrupt:
+        print("SMTP Relay Server is stopping...")
+        server.stop()
+    
 
 if __name__ == '__main__':
     main()
