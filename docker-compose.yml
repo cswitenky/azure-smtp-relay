@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  azure-smtp-relay:
+    build: .
+    container_name: azure-smtp-relay
+    image: azure-smtp-relay:latest
+    environment:
+      - CONNECTION_STRING=${CONNECTION_STRING}

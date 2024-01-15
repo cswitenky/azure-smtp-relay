@@ -1,8 +1,9 @@
+import os
 import json
 from azure.communication.email import EmailClient
 
 def send_email(sender, recipient, subject, text):
-    connection_string = get_config('config.json', 'connection_string')
+    connection_string = os.getenv('CONNECTION_STRING') or get_config('config.json', 'connection_string')
 
     client = EmailClient.from_connection_string(connection_string)
 
@@ -16,6 +17,7 @@ def send_email(sender, recipient, subject, text):
             "plainText": text,
         }
     }
+
 
     print(message)
 

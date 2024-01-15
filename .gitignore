@@ -7,8 +7,10 @@ __pycache__/
 # Project files
 config.json
 demo.py
-Dockerfile
 
+# Docker
+Dockerfile
+.env
 
 # Virtual Environment
 venv/
