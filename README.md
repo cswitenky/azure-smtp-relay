@@ -12,6 +12,12 @@ This is **NOT** intended to be exposed to the public internet. There is no authe
 
 Before using this SMTP relay server, you need to have an Azure Communication Services resource for email. You can create one by following the [documentation](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/create-email-communication-resource).
 
+You **must** have your Azure Communication Services connection string. You can find it in the Azure Portal under your Azure Communication Services resource. It will look something like this:
+
+```text
+endpoint=https://some-domain-name.com/;accesskey=XXXXXXXXXXXXXXXXXX==
+```
+
 ## Installation
 
 ### Python 3.8+
