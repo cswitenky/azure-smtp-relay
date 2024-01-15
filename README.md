@@ -24,7 +24,7 @@ First, add your connection string to `config.json`.
 }
 ```
 
-Then run the server with `python3 src/smtp_server.py`. The server will listen on port 1025 by default.
+Then run the server with `python3 src/smtp_server.py`.
 
 ### Docker
 
@@ -49,6 +49,8 @@ services:
 
 Then run `docker-compose up -d`.
 
-### Usage
+## Usage
 
-To be written...
+To use `azure-smtp-relay`, you need to configure your application to use your new SMTP relay server.
+
+Generally, you will need to set the IP address to the computer running the SMTP relay server and the port to 1025. No authentication is required to interact with the SMTP relay server so you can turn off corresponding security/authentication settings in your application. Then set your from address to the email address you want to send the email from. Usually, that is your donotreply@domain.com address you set up in your Azure Communication Services resource.
