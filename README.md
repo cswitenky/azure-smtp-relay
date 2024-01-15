@@ -12,6 +12,39 @@ This is **NOT** intended to be exposed to the public internet. There is no authe
 
 Before using this SMTP relay server, you need to have an Azure Communication Services resource for email. You can create one by following the [documentation](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/email/create-email-communication-resource).
 
-## Usage
+## Running
 
-More to be written...
+### Python
+
+First, add your connection string to `config.json`.
+
+```json
+{
+  "connection_string": "your-connection-string-here"
+}
+```
+
+Then run the server with `python3 src/smtp_server.py`. The server will listen on port 1025 by default.
+
+### Docker
+
+`docker run -p 1025:1025 -e CONNECTION_STRING="your-connection-string-here" ghcr.io/cswitenky/azure-smtp-relay:latest`
+
+### docker-compose
+
+```yaml
+version: "3"
+
+services:
+  azure-smtp-relay:
+    container_name: azure-smtp-relay
+    image: ghcr.io/cswitenky/azure-smtp-relay:latest
+    ports:
+      - 1025:1025/tcp
+    environment:
+      - CONNECTION_STRING="your-connection-string-here"
+```
+
+### Usage
+
+To be written...
