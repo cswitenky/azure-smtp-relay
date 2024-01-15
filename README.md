@@ -28,9 +28,11 @@ Then run the server with `python3 src/smtp_server.py`. The server will listen on
 
 ### Docker
 
-`docker run -p 1025:1025 -e CONNECTION_STRING="your-connection-string-here" ghcr.io/cswitenky/azure-smtp-relay:latest`
+Run this command: `docker run -p 1025:1025 -e CONNECTION_STRING="your-connection-string-here" ghcr.io/cswitenky/azure-smtp-relay:latest`.
 
 ### docker-compose
+
+Create a `docker-compose.yml` and copy and paste the following:
 
 ```yaml
 version: "3"
@@ -44,6 +46,8 @@ services:
     environment:
       - CONNECTION_STRING="your-connection-string-here"
 ```
+
+Then run `docker-compose up -d`.
 
 ### Usage
 
