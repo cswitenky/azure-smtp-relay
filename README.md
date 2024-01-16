@@ -24,7 +24,7 @@ endpoint=https://some-domain-name.com/;accesskey=XXXXXXXXXXXXXXXXXX==
 
 ### Python 3.8+
 
-First, add your connection string to `config.json`.
+- First, add your connection string to `config.json`.
 
 ```json
 {
@@ -32,7 +32,9 @@ First, add your connection string to `config.json`.
 }
 ```
 
-Then run the server with `python3 src/smtp_server.py`.
+- Install the required packages: `pip install -r requirements.txt`.
+
+- Run the server with `python src/smtp_server.py`.
 
 ### Docker
 
