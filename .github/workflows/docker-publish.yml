@@ -54,3 +54,10 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+
+      - uses: actions/delete-package-versions@v5.0.0
+      id: delete-old-versions
+      with:
+        package-name: "azure-smtp-relay"
+        package-type: "container"
+        min-versions-to-keep: 3
