@@ -60,4 +60,5 @@ jobs:
         with:
           package-name: "azure-smtp-relay"
           package-type: "container"
-          min-versions-to-keep: 3
+          min-versions-to-keep: 10
+          delete-only-untagged-versions: "true"
